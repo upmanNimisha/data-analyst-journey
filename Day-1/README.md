@@ -1,5 +1,5 @@
 Day 1 started
----------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
 # Data Analysis : examining data to find useful insights and support decision making
 
 Example: A company has data
@@ -33,8 +33,21 @@ Example: A company has data
                 2- Unstructured Data :
                                      Unorganised Data 
                                      Hard to Analyze
-                                     Eg : Images , Videos < Email
+                                     Eg : Images , Videos , Email
 
-         
+# Types of Analysis :
+                 1- Descriptive Analysis (What happened)
+                 2- Diagnostc Analysis (Why did it happen)
+                 3- Predictive Analysis (What will happen)
+                 4- Prescriptive Analysis (What should we do)
+--> Eg :
+        1- Sales decreased
+        2- Prices are high
+        3- Sales may drop
+        4- Offer discount
+   
+
+                 
+                 
          
      
