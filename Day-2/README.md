@@ -61,3 +61,41 @@ It helps in:
 			  4- By: Average of Experience
 			  
 - Departments with more experience tend to have higher salaries
+
+- ----------------------------------------------------------------------------------------------------------------------------------------
+#  Pivot Chart (Excel)
+
+## What is a Pivot Chart?
+
+A Pivot Chart is a visual representation of a Pivot Table.  
+It helps in understanding data quickly using graphs instead of numbers.
+
+---
+
+## Steps to Create a Pivot Chart
+
+1. Select any cell inside the Pivot Table
+2. Go to Insert tab
+3. Click on PivotChart
+4. Choose chart type (Column Chart or Bar Chart)
+5. Click OK
+
+---
+
+## Chart Used
+
+- Chart Type: Column Chart
+
+---
+
+## Analysis Performed
+
+- Visualized Average Salary by Department
+- Compared different departments easily
+
+---
+
+## Insight
+
+- The IT department has the highest average salary
+- Higher experience leads to higher salary
