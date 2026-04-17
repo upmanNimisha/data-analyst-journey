@@ -46,18 +46,18 @@ It helps in:
 ## Insight
 
 - The IT department has the highest average salary and experience
--->Method 1:Pivot Table + Sorting
-            Create Pivot Table (same as you did)
-            Get:Avg Salary by Department
-            Now:Right-click on any number in Avg Salary column
-            Click Sort → Largest to Smallest
+- Method 1:Pivot Table + Sorting
+            1- Create Pivot Table (same as you did)
+            2- Get:Avg Salary by Department
+            3- Now:Right-click on any number in Avg Salary column
+            4- Click Sort → Largest to Smallest
 			
--->METHOD 2: Value Filters In Pivot Table:
-              Click dropdown on Row Labels (Department)
-              Go to:Value Filters → Top 10
-              Select:Top 1
-              By: Average of Salary
+- METHOD 2: Value Filters In Pivot Table:
+              1- Click dropdown on Row Labels (Department)
+              2- Go to:Value Filters → Top 10
+              3- Select:Top 1
+              4- By: Average of Salary
 			  or 
-			  By: Average of Experience
+			  4- By: Average of Experience
 			  
 - Departments with more experience tend to have higher salaries
