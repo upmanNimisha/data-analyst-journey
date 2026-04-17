@@ -1,4 +1,4 @@
-# Day 3 - Pivot Table (Excel)
+# Day 2 - Pivot Table (Excel)
 
 ## What is a Pivot Table?
 
