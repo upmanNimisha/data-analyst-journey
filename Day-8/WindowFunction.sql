@@ -141,14 +141,44 @@ select * from
 where rn <= 2
 
 --Q5.Har employee ko salary ke basis pe RANK do
+select * ,
+RANK() over(
+order by salary desc
+) as dr 
+from employees
 
 --Q6.Har department me salary ke basis pe DENSE_RANK do
 
+select * ,
+dense_rank() over(
+partition by department 
+order by salary desc 
+) as dr 
+from employees 
+
+
 --Q7.Har department ki top 2 salaries including ties nikalo
+with temp as (
+select * ,
+dense_rank() over(
+partition by department 
+order by salary desc 
+) as dr 
+from employees 
+) 
+select * from temp where dr <= 2
 
 --Q8.Overall second highest salary find karo using DENSE_RANK
 	 
-	 
+with temp as (
+select * ,
+DENSE_RANK() over(
+order by salary desc
+) as dr 
+from employees
+)
+ select * from temp 
+where dr = 2
 	 
 	 
 	 
