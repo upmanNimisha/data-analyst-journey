@@ -50,6 +50,19 @@ FUNCTION() OVER (
      MAX()	 
 --   Value Functions
      LAG()
+	 -------
+	 LAG(column) OVER(
+     ORDER BY column
+     )
+	 
+	 --LAG(column, offset, default_value)
+	 --| Part            | Meaning                                      |
+     --| --------------- | -------------------------------------------- |
+     --| `column`        | kis column ka previous value chahiye         |
+     --| `offset`        | kitni rows piche jaana hai                   |
+     --| `default_value` | agar previous row na mile to kya dikhana hai |
+
+	 -------
 	 LEAD()
 	 FIRST_VALUE()
 	 LAST_VALUE()
@@ -180,9 +193,85 @@ from employees
  select * from temp 
 where dr = 2
 	 
-	 
-	 
-	 
+--Q9.Har employee ke saath department ka total salary dikhao
+select * ,
+sum(salary) over (
+partition by department) as total_salary
+from employees
+
+--Q10.Har employee ke saath department average salary dikhao
+select * ,
+AVG(salary) over (
+partition by department) as average_salary
+from employees
+
+--Q11.Un employees ko find karo jinki salary department average se zyada hai
+with temp as (
+select * ,
+avg(salary) over (
+partition by department) as average_salary
+from employees )
+select * from temp 
+where salary > average_salary
+
+--Q12.Department-wise running salary total dikhao
+Select * ,
+sum(salary) over(
+partition by department order by emp_id ) as running_salary
+from employees
+
+--Q13.Har employee ke saath department employee count dikhao	 
+select *,
+Count(emp_id) over (
+partition by department) as employee_count
+from employees	 
+
+--Q14.Har employee ke saath previous employee ki salary dikhao
+
+Select *,
+Lag(salary) over(
+order by emp_id) as previous_salary
+from employees
+
+--Q15.Current aur previous salary ka difference nikalo
+Select *,
+Lag(salary) over(
+order by emp_id) as previous_salary
+from employees
+
+WITH temp AS (
+    SELECT *,
+           LAG(salary) OVER(
+               ORDER BY emp_id
+           ) AS previous_salary
+    FROM employees
+)
+
+SELECT *,
+       salary - previous_salary AS salary_difference
+FROM temp;
+
+
+-- Better way 
+SELECT *,
+       salary - LAG(salary) OVER(
+           ORDER BY emp_id
+       ) AS salary_difference
+FROM employees;
+
+--Q16.Har department me previous salary dikhao
+
+Select *,
+Lag(salary) over( 
+partition by department
+order by emp_id) as previous_salary
+from employees
+
+--Q17.Next employee ki salary dikhao	 
+Select *,
+Lead(salary) over(
+order by emp_id) as next_salary
+from employees	 
 	 
 	 
 	 
